@@ -14,12 +14,29 @@ import {
   Bars3Icon as MenuIcon,
   PhoneXMarkIcon,
 } from "@heroicons/react/24/outline";
+import ThemeSwitch from "../Switch/ThemeSwitch";
+import { themeSwitch, RootState } from "../../store";
+import Alert from "../Alert/Alert";
+import { useSelector, useDispatch } from "react-redux";
+import { ThemeTypesEnum } from "../../types/enum";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const dispatch = useDispatch();
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
+
+  const theme = useSelector((state: RootState) => state.system.mode);
+
+  const handleChangeTheme = () =>
+    dispatch(
+      themeSwitch(
+        theme === ThemeTypesEnum.LIGHT
+          ? ThemeTypesEnum.DARK
+          : ThemeTypesEnum.LIGHT
+      )
+    );
 
   return (
     <>
@@ -53,29 +70,32 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
             <span className="sr-only">Close sidebar</span>
             <CrossIcon className="w-6" />
           </button>
-          <ul className="space-y-2">
-            <NavLink
-              to="/"
-              label="Home"
-              isPro={false}
-              onClick={closeSidebar}
-              Icon={<HomeIcon className="w-6" />}
-            />
-            <NavLink
-              to="/games"
-              label="Games"
-              isPro={false}
-              Icon={<DashboardIcon className="w-6" />}
-              onClick={closeSidebar}
-            />
-            <NavLink
-              to="/documents"
-              label="Documents"
-              isPro={false}
-              Icon={<DocumentsIcon className="w-6" />}
-              onClick={closeSidebar}
-            />
-            {/*
+          <div className="">
+            <ul className="space-y-2">
+              <NavLink
+                to="/"
+                label="Home"
+                isPro={false}
+                onClick={closeSidebar}
+                Icon={<HomeIcon className="w-6" />}
+              />
+              <NavLink
+                to="/games"
+                label="Games"
+                isPro={false}
+                Icon={<DashboardIcon className="w-6" />}
+                onClick={closeSidebar}
+              />
+              <NavLink
+                to="/documents"
+                label="Documents"
+                isPro={false}
+                Icon={<DocumentsIcon className="w-6" />}
+                onClick={closeSidebar}
+              />
+              <ThemeSwitch theme={theme} onClick={handleChangeTheme} />
+
+              {/*
             <NavLink
               to="/report-templates"
               label="Report Templates"
@@ -97,7 +117,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
               Icon={<ProductIcon className="w-6" />}
               onClick={closeSidebar}
             /> */}
-            {/* {!userID && (
+              {/* {!userID && (
               <>
                 <NavLink
                   to="/login"
@@ -115,7 +135,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                 />
               </>
             )} */}
-            {/* 
+              {/* 
             {userID && (
               <NavLink
                 to="/login"
@@ -128,41 +148,8 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                 }}
               />
             )} */}
-          </ul>
-          <div
-            id="dropdown-cta"
-            className="p-4 mt-6 rounded-lg bg-blue-50 dark:bg-blue-900"
-            role="alert"
-          >
-            <div className="flex items-center mb-3">
-              <span className="bg-orange-100 text-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900">
-                Beta
-              </span>
-              <button
-                type="button"
-                className="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 inline-flex h-6 w-6 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800"
-                data-dismiss-target="#dropdown-cta"
-                aria-label="Close"
-              >
-                <span className="sr-only">Close</span>
-                <svg
-                  aria-hidden="true"
-                  className="w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-            <p className="text-sm text-blue-800 dark:text-blue-400">
-              The App is in beta mode, feel free to suggest us for new features.
-            </p>
+            </ul>
+            <Alert />
           </div>
         </div>
       </aside>
