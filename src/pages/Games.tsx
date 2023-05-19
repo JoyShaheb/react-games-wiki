@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetAllGamesQuery } from "../store";
-import GameCard from "../components/Cards/GameCard";
+import GameCard from "../components/Cards/GameCard/GameCard";
 import { IGame } from "../types/games.interface";
 
 const Games = () => {

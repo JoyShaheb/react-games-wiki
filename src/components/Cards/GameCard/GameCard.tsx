@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { IGame } from "../../types/games.interface";
-import { GreenBadge, RedBadge, YellowBadge } from "../Badge";
+import { IGame } from "../../../types/games.interface";
+import { GreenBadge, RedBadge, YellowBadge } from "../../Badge";
 
 const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
   const showBadge = () => {
