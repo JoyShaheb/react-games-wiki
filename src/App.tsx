@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, ErrorrPage } from "./pages";
 import { RootState } from "./store";
-import { useSelector } from "react-redux/es/exports";
+import { useSelector } from "react-redux";
 import { ThemeTypesEnum } from "./types/enum";
 
 const App = () => {
