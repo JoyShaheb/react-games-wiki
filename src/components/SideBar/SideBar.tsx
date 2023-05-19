@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import {
   HomeIcon,
@@ -28,6 +28,13 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
   };
 
   const theme = useSelector((state: RootState) => state.system.mode);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle(
+      ThemeTypesEnum.DARK,
+      theme === ThemeTypesEnum.DARK
+    );
+  }, [theme]);
 
   const handleChangeTheme = () =>
     dispatch(
