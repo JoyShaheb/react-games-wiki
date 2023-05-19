@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { useGetAllGamesQuery } from "../store";
 
 const Games = () => {
-  return (
-    <div>Games</div>
-  )
-}
+  const { data } = useGetAllGamesQuery(undefined);
+  console.log(data);
+  return <div>Games</div>;
+};
 
-export default Games
+export default Games;

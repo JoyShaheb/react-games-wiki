@@ -1,18 +1,16 @@
-import { resetSystem, sysmtemSlice, themeSwitch } from "./Slices/System";
-
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
+import { resetSystem, sysmtemSlice, themeSwitch } from "./Slices/System";
+import { GamesAPI, useGetAllGamesQuery } from "./API/GamesAPI";
+
 export const store = configureStore({
   reducer: {
-    // [locationAPI.reducerPath]: locationAPI.reducer,
+    [GamesAPI.reducerPath]: GamesAPI.reducer,
     system: sysmtemSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
-      .concat
-      // locationAPI.middleware
-      (),
+    getDefaultMiddleware().concat(GamesAPI.middleware),
 });
 
 setupListeners(store.dispatch);
@@ -23,4 +21,7 @@ export {
   // system actions
   resetSystem,
   themeSwitch,
+
+  // Games API
+  useGetAllGamesQuery,
 };
