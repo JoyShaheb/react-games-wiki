@@ -7,8 +7,9 @@ interface SystemState {
   mode: TailwindThemeType;
 }
 
+const retrieveData = JSON.parse(localStorage.getItem("systemState") || "{}");
 const initialState: SystemState = {
-  mode: ThemeTypesEnum.DARK,
+  mode: retrieveData.mode || ThemeTypesEnum.DARK,
 };
 
 export const sysmtemSlice = createSlice({
@@ -20,8 +21,12 @@ export const sysmtemSlice = createSlice({
       action: PayloadAction<TailwindThemeType>
     ) => {
       state.mode = action.payload;
+      localStorage.setItem("systemState", JSON.stringify(state));
     },
-    resetSystem: () => initialState,
+    resetSystem: () => {
+      localStorage.removeItem("systemState");
+      return initialState;
+    },
   },
 });
 
