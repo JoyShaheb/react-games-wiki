@@ -19,6 +19,9 @@ const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
     }
   };
 
+  const gradientTextStyles =
+    "bg-gradient-to-r from-cyan-400 to-blue-500  dark:to-white text-transparent bg-clip-text";
+
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cursor-pointer">
       <img
@@ -32,7 +35,9 @@ const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
         alt=""
       />
       <div className="p-3">
-        <h5 className="bg-gradient-to-r from-cyan-400 to-blue-500  dark:to-white text-transparent bg-clip-text mb-2 text-xl font-bold tracking-tight">
+        <h5
+          className={`${gradientTextStyles} mb-2 text-xl font-bold tracking-tight`}
+        >
           {name}
         </h5>
         <div className="flex flex-row items-center justify-between">
