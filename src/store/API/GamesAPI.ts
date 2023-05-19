@@ -7,7 +7,7 @@ export const GamesAPI = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.rawg.io/api/games" }),
   endpoints: (builder) => ({
     getAllGames: builder.query<IGamesResponse, undefined>({
-      query: () => `?key=8f08ec8a495d4d748e7505aac6c0b971`,
+      query: () => `?key=${import.meta.env.VITE_APP_RAWG_GAMES_API_KEY}`,
       providesTags: ["Games"],
     }),
   }),
