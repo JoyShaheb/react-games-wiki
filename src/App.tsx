@@ -4,6 +4,7 @@ import { Home, ErrorrPage } from "./pages";
 import { RootState } from "./store";
 import { useSelector } from "react-redux";
 import { ThemeTypesEnum } from "./types/enum";
+import Sidebar from "./components/SideBar/SideBar";
 
 const App = () => {
   const theme = useSelector((state: RootState) => state.system.mode);
@@ -17,12 +18,12 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="">
+      <Sidebar>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<ErrorrPage />} />
         </Routes>
-      </div>
+      </Sidebar>
     </BrowserRouter>
   );
 };
