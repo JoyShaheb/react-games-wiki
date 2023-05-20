@@ -13,6 +13,8 @@ import {
   XMarkIcon as CrossIcon,
   Bars3Icon as MenuIcon,
   PhoneXMarkIcon,
+  CpuChipIcon,
+  PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 import ThemeSwitch from "../Switch/ThemeSwitch";
 import { themeSwitch, RootState } from "../../store";
@@ -90,14 +92,14 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                 to="/games"
                 label="Games"
                 isPro={false}
-                Icon={<DashboardIcon className="w-6" />}
+                Icon={<PuzzlePieceIcon className="w-6" />}
                 onClick={closeSidebar}
               />
               <NavLink
                 to="/platforms"
                 label="Platforms"
                 isPro={false}
-                Icon={<DocumentsIcon className="w-6" />}
+                Icon={<CpuChipIcon className="w-6" />}
                 onClick={closeSidebar}
               />
               <ThemeSwitch theme={theme} onClick={handleChangeTheme} />
