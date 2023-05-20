@@ -31,7 +31,7 @@ const PlatformCard: FC<IPlatformData> = ({
           <p className="font-normal text-gray-700 dark:text-gray-400">
             Total games
           </p>
-          <DarkBadge label={games_count.toString()} />
+          <DarkBadge label={games_count?.toString()} />
         </div>
       </div>
     </div>

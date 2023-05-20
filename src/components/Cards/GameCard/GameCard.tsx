@@ -18,16 +18,16 @@ const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
         src={background_image}
         alt={name}
       />
-      <div className="p-3">
+      <div className="p-3 flex flex-col justify-between">
+        <div className="flex flex-row items-center justify-between">
+          <div className="text-gray-400">platform</div>
+          <ShowRating metacritic={metacritic} />
+        </div>
         <h5
           className={`${gradientTextStyles} mb-2 text-xl font-bold tracking-tight`}
         >
           {name}
         </h5>
-        <div className="flex flex-row items-center justify-between">
-          <div className="text-gray-400">platform</div>
-          <ShowRating metacritic={metacritic} />
-        </div>
       </div>
     </div>
   );
