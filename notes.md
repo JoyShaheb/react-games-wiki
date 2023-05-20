@@ -4,7 +4,8 @@ This is a work in progress app, might take 1 week or less to finish it.
 
 ## Updates
 
-* pagination will not work because there's over 800k+ games, instead, add lazy loader, ability to search and filter
+* pagination will not work on pages with huge data because there's over 800k+ games, instead, add lazy loader, ability to search and filter
+* add the pagination to smaller data pages like platforms
 
 ## TODO
 
