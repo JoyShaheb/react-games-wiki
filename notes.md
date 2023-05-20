@@ -7,12 +7,16 @@ This is a work in progress app, might take 1 week or less to finish it.
 * ✅ pick a better icon for the thumbnail
 * ✅ Sidebar
 * ✅ dark / light theme feature
-* custom scrollbar with custom css
+* ✅ custom scrollbar with custom css
 * ✅ add skeleton loader
 * ✅ add loading states with error handlers
 * add pagination
 * add platform icon options on the game card
 * when user hovers on the card, they should be able to see more info, just like the original website game cards
+* users can click on the game card and see more details about the game on a different route/page
+
+## Themes
+
 * update UI for the light mode
 
 ## states
