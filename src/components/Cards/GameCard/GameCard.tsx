@@ -1,24 +1,8 @@
 import { FC } from "react";
 import { IGame } from "../../../types/games.interface";
-import { GreenBadge, RedBadge, YellowBadge } from "../../Badge";
+import ShowRating from "./Pieces/ShowRating";
 
 const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
-  const showBadge = () => {
-    switch (true) {
-      case metacritic >= 75:
-        return <GreenBadge label={metacritic.toString()} />;
-      case metacritic >= 50 && metacritic < 75:
-        return <YellowBadge label={metacritic.toString()} />;
-      case metacritic >= 25 && metacritic < 50:
-        return <RedBadge label={metacritic.toString()} />;
-      case metacritic >= 0 && metacritic < 25:
-        return <RedBadge label={metacritic.toString()} />;
-
-      default:
-        return null;
-    }
-  };
-
   const gradientTextStyles =
     "bg-gradient-to-r from-cyan-400 to-blue-500  dark:to-white text-transparent bg-clip-text";
 
@@ -42,7 +26,7 @@ const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
         </h5>
         <div className="flex flex-row items-center justify-between">
           <div className="text-gray-400">platform</div>
-          {showBadge()}
+          <ShowRating metacritic={metacritic} />
         </div>
       </div>
     </div>
