@@ -1,11 +1,7 @@
-import React from "react";
-
 const Home = () => {
   return (
     <div>
-      <button onClick={() => console.log("Hello")} className="">
-        click to toggle theme
-      </button>
+      <div className="">Work in progress home page</div>
     </div>
   );
 };
