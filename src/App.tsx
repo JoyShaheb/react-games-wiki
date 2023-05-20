@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, ErrorrPage, Games } from "./pages";
+import { Home, ErrorrPage, Games, Platforms } from "./pages";
 import Sidebar from "./components/SideBar/SideBar";
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Games />} />
+          <Route path="/platforms" element={<Platforms />} />
           <Route path="*" element={<ErrorrPage />} />
         </Routes>
       </Sidebar>

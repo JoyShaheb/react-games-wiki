@@ -94,8 +94,8 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
                 onClick={closeSidebar}
               />
               <NavLink
-                to="/documents"
-                label="Documents"
+                to="/platforms"
+                label="Platforms"
                 isPro={false}
                 Icon={<DocumentsIcon className="w-6" />}
                 onClick={closeSidebar}

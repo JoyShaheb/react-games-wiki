@@ -16,7 +16,7 @@ const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
         }}
         className="rounded-t-lg"
         src={background_image}
-        alt=""
+        alt={name}
       />
       <div className="p-3">
         <h5

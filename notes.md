@@ -33,6 +33,11 @@ This is a work in progress app, might take 1 week or less to finish it.
 * add login/signup feature so that the users can save their favorite games
 * react toastify with middleware with redux toolkit/ RTK query
 
+## Pages
+
+* Games || Game Details
+* Platform || Platform Details
+
 ## Future features
 
 * add unit test -> cypress / jest
