@@ -22,7 +22,7 @@ This is a work in progress app, might take 1 week or less to finish it.
 * ✅ no data state
 * ✅ No page found page
 * ✅ States component
-* Nprogress bar library
+* ✅ Nprogress bar library
 
 ## Fullstack plans
 

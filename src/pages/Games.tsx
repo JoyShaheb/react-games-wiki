@@ -2,10 +2,13 @@ import { useGetAllGamesQuery } from "../store";
 import GameCard from "../components/Cards/GameCard/GameCard";
 import { IGame } from "../types/games.interface";
 import States from "../components/States/States";
+import { ProgressBar } from "../components/NProgress/ProgressBar";
 
 const Games = () => {
   const { data, error, isLoading, isFetching } = useGetAllGamesQuery(undefined);
   console.log(data);
+
+  ProgressBar(isLoading || isFetching);
   return (
     <>
       <States

@@ -14,6 +14,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "dotenv": "^16.0.3",
     "nanoid": "^4.0.2",
+    "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -21,6 +22,7 @@
     "sass": "^1.62.1"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
