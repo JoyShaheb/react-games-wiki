@@ -47,6 +47,7 @@ This is a work in progress app, might take 1 week or less to finish it.
 
 ## Future features
 
+* [x] add redux persist to save user settings/ data
 * add unit test -> cypress / jest
 * add storybook for UI testing
 * add husky eslint prettier

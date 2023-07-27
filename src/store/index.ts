@@ -13,13 +13,16 @@ const persistConfig = {
   storage,
 };
 
-const persistedSystem = persistReducer(persistConfig, sysmtemSlice.reducer);
+const persistedSystemReducer = persistReducer(
+  persistConfig,
+  sysmtemSlice.reducer
+);
 
 export const store = configureStore({
   reducer: {
     [GamesAPI.reducerPath]: GamesAPI.reducer,
     [PlatformAPI.reducerPath]: PlatformAPI.reducer,
-    system: persistedSystem,
+    system: persistedSystemReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(GamesAPI.middleware, PlatformAPI.middleware),
