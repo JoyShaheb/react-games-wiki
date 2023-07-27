@@ -2,17 +2,8 @@ import React, { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import {
   HomeIcon,
-  ChartPieIcon as DashboardIcon,
-  DocumentChartBarIcon as ReportTemplateIcon,
-  FolderIcon as DocumentsIcon,
-  UserCircleIcon as UserIcon,
-  ShoppingBagIcon as ProductIcon,
-  ArrowRightOnRectangleIcon as SignoutIcon,
-  ArrowLeftOnRectangleIcon as SigninIcon,
-  UserPlusIcon as SignupIcon,
   XMarkIcon as CrossIcon,
   Bars3Icon as MenuIcon,
-  PhoneXMarkIcon,
   CpuChipIcon,
   PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
@@ -34,7 +25,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     document.documentElement.classList.toggle(
       ThemeTypesEnum.DARK,
-      theme === ThemeTypesEnum.DARK
+      theme === ThemeTypesEnum.DARK,
     );
   }, [theme]);
 
@@ -43,8 +34,8 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       themeSwitch(
         theme === ThemeTypesEnum.LIGHT
           ? ThemeTypesEnum.DARK
-          : ThemeTypesEnum.LIGHT
-      )
+          : ThemeTypesEnum.LIGHT,
+      ),
     );
 
   return (
@@ -63,7 +54,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       <aside
         id="cta-button-sidebar"
         className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
-          !isSidebarOpen && "-translate-x-full"
+          !isSidebarOpen ? "-translate-x-full" : ""
         } sm:translate-x-0`}
         aria-label="Sidebar"
       >

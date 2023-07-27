@@ -1,4 +1,4 @@
-## Note 💡
+# Note 💡
 
 This is a work in progress app, might take 1 week or less to finish it.
 

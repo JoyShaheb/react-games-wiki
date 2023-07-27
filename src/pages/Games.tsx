@@ -13,7 +13,7 @@ const Games = () => {
     },
     {
       // pollingInterval: 1000,
-    }
+    },
   );
   console.log(data);
 

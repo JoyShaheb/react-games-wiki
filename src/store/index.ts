@@ -15,7 +15,7 @@ const persistConfig = {
 
 const persistedSystemReducer = persistReducer(
   persistConfig,
-  sysmtemSlice.reducer
+  sysmtemSlice.reducer,
 );
 
 export const store = configureStore({

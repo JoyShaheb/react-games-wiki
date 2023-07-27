@@ -10,9 +10,7 @@ interface IThemeSwitchProps {
 
 const ThemeSwitch: FC<IThemeSwitchProps> = ({ theme, onClick }) => {
   return (
-    <div
-      className={`flex items-center p-2 text-base font-normal rounded-lg text-gray-900 dark:text-white`}
-    >
+    <div className="flex items-center p-2 text-base font-normal rounded-lg text-gray-900 dark:text-white">
       <MoonIcon className="w-6" />
       <span className="flex-1 ml-3 whitespace-nowrap">Dark Mode</span>
       <label className="relative inline-flex items-center cursor-pointer">

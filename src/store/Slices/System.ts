@@ -17,7 +17,7 @@ export const sysmtemSlice = createSlice({
   reducers: {
     themeSwitch: (
       state: SystemState,
-      action: PayloadAction<TailwindThemeType>
+      action: PayloadAction<TailwindThemeType>,
     ) => {
       state.mode = action.payload;
     },

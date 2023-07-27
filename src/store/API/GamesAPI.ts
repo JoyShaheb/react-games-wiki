@@ -1,6 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IGamesResponse } from "../../types/games.interface";
 
+const key = import.meta.env.VITE_APP_RAWG_GAMES_API_KEY as string;
+
 export const GamesAPI = createApi({
   reducerPath: "GamesAPI",
   tagTypes: ["Games"],
@@ -14,9 +16,7 @@ export const GamesAPI = createApi({
       }
     >({
       query: ({ page, page_size }) =>
-        `?key=${
-          import.meta.env.VITE_APP_RAWG_GAMES_API_KEY
-        }&page=${page}&page_size=${page_size}`,
+        `?key=${key}&page=${page}&page_size=${page_size}`,
       providesTags: ["Games"],
     }),
   }),
