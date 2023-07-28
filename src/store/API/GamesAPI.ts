@@ -18,6 +18,18 @@ export const GamesAPI = createApi({
       query: ({ page, page_size }) =>
         `?key=${key}&page=${page}&page_size=${page_size}`,
       providesTags: ["Games"],
+      // Only have one cache entry because the arg always maps to one string
+      serializeQueryArgs: ({ endpointName }) => {
+        return endpointName;
+      },
+      // Always merge incoming data to the cache entry
+      merge: (currentCache, newItems) => {
+        currentCache.results.push(...newItems.results);
+      },
+      // Refetch when the page arg changes
+      forceRefetch({ currentArg, previousArg }) {
+        return currentArg !== previousArg;
+      },
     }),
   }),
 });
