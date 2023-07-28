@@ -1,11 +1,9 @@
 import { FC } from "react";
 import { IGame } from "../../../types/games.interface";
 import ShowRating from "./Pieces/ShowRating";
+import { gradientTextStyles } from "../../Text/GradientText";
 
 const GameCard: FC<IGame> = ({ background_image, name, metacritic }) => {
-  const gradientTextStyles =
-    "bg-gradient-to-r from-cyan-400 to-blue-500  dark:to-white text-transparent bg-clip-text";
-
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cursor-pointer">
       <img
